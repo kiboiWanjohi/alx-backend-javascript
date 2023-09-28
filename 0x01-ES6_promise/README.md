@@ -471,3 +471,42 @@ Directory: 0x01-ES6_promise
 File: 9-try.js
    
 Copyright © 2023 ALX, All rights reserved.
+10. Await / Async
+#advanced
+Import uploadPhoto and createUser from utils.js
+
+Write an async function named asyncUploadUser that will call these two functions and return an object with the following format:
+
+{
+  photo: response_from_uploadPhoto_function,
+  user: response_from_createUser_function,
+}
+If one of the async function fails, return an empty object. Example:
+
+{
+  photo: null,
+  user: null,
+}
+bob@dylan:~$ cat 100-main.js
+import asyncUploadUser from "./100-await";
+
+const test = async () => {
+    const value = await asyncUploadUser();
+    console.log(value);
+};
+
+test();
+
+bob@dylan:~$ 
+bob@dylan:~$ npm run dev 100-main.js 
+{
+  photo: { status: 200, body: 'photo-profile-1' },
+  user: { firstName: 'Guillaume', lastName: 'Salva' }
+}
+bob@dylan:~$ 
+Repo:
+
+GitHub repository: alx-backend-javascript
+Directory: 0x01-ES6_promise
+File: 100-await.js
+   
